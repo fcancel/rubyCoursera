@@ -18,4 +18,8 @@ class Profile < ApplicationRecord
     end
   end
 
+  def self.get_all_profiles(min_birth_year, max_birth_year)
+    where('birth_year between :min_birth_year and :max_birth_year', min_birth_year: min_birth_year, max_birth_year: max_birth_year).order(:birth_year).to_a
+  end
+
 end

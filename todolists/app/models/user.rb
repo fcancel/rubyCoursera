@@ -6,6 +6,6 @@ class User < ApplicationRecord
   validates :username, presence:true
 
   def get_completed_count
-    self.todo_items.where(completed: true).count
+    todo_items.where(completed: true).count
   end
 end
